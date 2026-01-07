@@ -22,26 +22,3 @@ https://kuralink.pages.dev/kullaniciadi
 🛡️ Cloudflare korumaları (DDoS, bot, rate limit)
 
 📊 Görüntülenme sayacı (opsiyonel)
-
-🧱 Kullanılan Teknolojiler
-Frontend
-
-HTML5
-
-CSS / Tailwind (opsiyonel)
-
-Vanilla JavaScript
-
-Backend
-
-Cloudflare Pages Functions / Workers
-
-Cloudflare D1 (SQL Database)
-
-Cloudflare KV (Cache / sayaçlar)
-
-DevOps
-
-GitHub (version control)
-
-Cloudflare Pages (CI/CD)
