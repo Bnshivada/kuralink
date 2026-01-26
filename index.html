@@ -172,3 +172,29 @@
   </script>
 </body>
 </html>
+
+<script>
+function goProfile(){
+  const name = document.getElementById("displayName")?.value || "";
+  const bio = document.getElementById("bio")?.value || "";
+
+  const ids = [
+    "youtube","discord","truckersmp","kick","twitch",
+    "steam","instagram","patreon","friend"
+  ];
+
+  const links = {};
+  ids.forEach(id=>{
+    const v = document.getElementById(id)?.value;
+    if(v) links[id] = v;
+  });
+
+  const data = {
+    name, bio, links
+  };
+
+  const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+  window.location.href = "profile.html#"+encoded;
+}
+</script>
+
