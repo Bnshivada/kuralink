@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuralink</title>
+
+<style>
+body{
+  min-height:100vh;
+  background:radial-gradient(circle at top,#1a1a1a,#000);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-family:system-ui;
+  padding:40px;
+}
+.card{
+  width:75%;
+  max-width:900px;
+  background:#0f0f0f;
+  border:1px solid #222;
+  border-radius:26px;
+  padding:40px;
+}
+h2{font-size:2rem;margin-bottom:12px}
+p{opacity:.8;margin-bottom:30px;white-space:pre-wrap}
+.links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.links a{
+  padding:12px 18px;
+  border-radius:14px;
+  background:#1a1a1a;
+  border:1px solid #2a2a2a;
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h2 id="name"></h2>
+  <p id="bio"></p>
+  <div class="links" id="links"></div>
+</div>
+
+<script>
+const hash = location.hash.slice(1);
+if(hash){
+  const data = JSON.parse(decodeURIComponent(escape(atob(hash))));
+  document.getElementById("name").innerText = data.name || "";
+  document.getElementById("bio").innerText = data.bio || "";
+
+  const labels = {
+    youtube:"YouTube",
+    discord:"Discord",
+    truckersmp:"TruckersMP",
+    kick:"Kick",
+    twitch:"Twitch",
+    steam:"Steam",
+    instagram:"Instagram",
+    patreon:"Patreon",
+    friend:"Arkadaş"
+  };
+
+  const box = document.getElementById("links");
+  for(const k in data.links){
+    const a = document.createElement("a");
+    a.href = data.links[k];
+    a.target="_blank";
+    a.textContent = labels[k];
+    box.appendChild(a);
+  }
+}
+</script>
+
+</body>
+</html>
