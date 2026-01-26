@@ -106,6 +106,38 @@
     <div class="input-box">
       <span>kuralink.pages.dev/</span>
       <input type="text" placeholder="username" maxlength="20" />
+      <div id="createForm" style="display:none; margin-top:40px; text-align:left">
+
+  <h3 style="margin-bottom:10px">
+    Kuralink'inizde Kullanacağınız İsim:
+  </h3>
+  <input id="displayName" placeholder="Görünen isim" required>
+
+  <h3 style="margin:20px 0 10px">Hakkımda:</h3>
+  <textarea id="bio" maxlength="1000" placeholder="Kendinizden bahsedin (max 1000 karakter)"
+    style="width:100%;min-height:120px;background:#111;border:1px solid #222;color:#fff;border-radius:12px;padding:12px"></textarea>
+
+  <h3 style="margin:20px 0 10px">Bağlantılar</h3>
+
+  <!-- ZORUNLU -->
+  <input id="youtube" placeholder="YouTube Linki *" required>
+  <input id="discord" placeholder="Discord Linki *" required>
+  <input id="truckersmp" placeholder="TruckersMP Linki *" required>
+
+  <!-- OPSİYONEL -->
+  <input id="kick" placeholder="Kick Linki">
+  <input id="twitch" placeholder="Twitch Linki">
+  <input id="steam" placeholder="Steam Linki">
+  <input id="instagram" placeholder="Instagram Linki">
+  <input id="patreon" placeholder="Patreon Linki">
+  <input id="friend" placeholder="Arkadaş Linki">
+  <input id="apps" placeholder="Uygulama Linkleri">
+
+  <button style="margin-top:25px" onclick="createProfile()">
+    Oluştur
+  </button>
+</div>
+
     </div>
 
     <button>Kendi Kuralink'ini Oluştur!</button>
