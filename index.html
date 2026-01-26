@@ -1,103 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kuralink — Tek Link Tüm Dünyan.</title>
-  <meta name="description" content="Kuralink, tüm bağlantılarınızı tek bir basit sayfada paylaşmanızı sağlar." />
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     }
 
-    body {
-      min-height: 100vh;
-      background: radial-gradient(circle at top, #1a1a1a, #000);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    body{
+      min-height:100vh;
+      background:radial-gradient(circle at top,#1a1a1a,#000);
+      color:#fff;
+      display:flex;
+      justify-content:center;
+      padding:40px 16px;
     }
 
-    .container {
-      width: 100%;
-      max-width: 420px;
-      padding: 32px;
-      text-align: center;
+    .container{
+      width:100%;
+      max-width:420px;
+      text-align:center;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      letter-spacing: -1px;
+    h1{
+      font-size:2.5rem;
+      font-weight:800;
     }
 
-    h1 span {
-      color: #7c7cff;
+    h1 span{color:#7c7cff}
+
+    p{
+      margin-top:12px;
+      opacity:.85;
     }
 
-    p {
-      margin-top: 12px;
-      font-size: 1rem;
-      opacity: 0.85;
+    .input-box{
+      margin-top:32px;
+      display:flex;
+      background:#111;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid #222;
     }
 
-    .input-box {
-      margin-top: 32px;
-      display: flex;
-      background: #111;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid #222;
+    .input-box span{
+      padding:14px 12px;
+      font-size:.9rem;
+      opacity:.7;
+      background:#0b0b0b;
+      white-space:nowrap;
     }
 
-    .input-box span {
-      padding: 14px 12px;
-      font-size: 0.9rem;
-      opacity: 0.7;
-      background: #0b0b0b;
+    .input-box input{
+      flex:1;
+      background:transparent;
+      border:none;
+      color:#fff;
+      padding:14px;
+      outline:none;
+      font-size:1rem;
     }
 
-    .input-box input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      color: #fff;
-      padding: 14px;
-      outline: none;
-      font-size: 1rem;
+    button{
+      margin-top:20px;
+      width:100%;
+      padding:14px;
+      border-radius:14px;
+      border:none;
+      font-size:1rem;
+      font-weight:600;
+      cursor:pointer;
+      background:linear-gradient(135deg,#7c7cff,#9b6bff);
+      color:#fff;
     }
 
-    button {
-      margin-top: 20px;
-      width: 100%;
-      padding: 14px;
-      border-radius: 14px;
-      border: none;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      background: linear-gradient(135deg, #7c7cff, #9b6bff);
-      color: #fff;
-      transition: transform 0.15s ease, opacity 0.15s ease;
+    #createForm{
+      display:none;
+      margin-top:40px;
+      text-align:left;
     }
 
-    button:hover {
-      transform: translateY(-1px);
-      opacity: 0.9;
+    #createForm h3{
+      margin:18px 0 8px;
+      font-size:.9rem;
+      opacity:.9;
     }
 
-    .footer {
-      margin-top: 40px;
-      font-size: 0.8rem;
-      opacity: 0.5;
+    #createForm input,
+    #createForm textarea{
+      width:100%;
+      background:#111;
+      border:1px solid #222;
+      color:#fff;
+      border-radius:12px;
+      padding:12px;
+      margin-bottom:10px;
+      outline:none;
+    }
+
+    #createForm textarea{
+      min-height:120px;
+      resize:none;
+    }
+
+    .footer{
+      margin-top:40px;
+      font-size:.8rem;
+      opacity:.5;
+      text-align:center;
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>Kura<span>link</span></h1>
@@ -105,44 +125,50 @@
 
     <div class="input-box">
       <span>kuralink.pages.dev/</span>
-      <input type="text" placeholder="username" maxlength="20" />
-      <div id="createForm" style="display:none; margin-top:40px; text-align:left">
-
-  <h3 style="margin-bottom:10px">
-    Kuralink'inizde Kullanacağınız İsim:
-  </h3>
-  <input id="displayName" placeholder="Görünen isim" required>
-
-  <h3 style="margin:20px 0 10px">Hakkımda:</h3>
-  <textarea id="bio" maxlength="1000" placeholder="Kendinizden bahsedin (max 1000 karakter)"
-    style="width:100%;min-height:120px;background:#111;border:1px solid #222;color:#fff;border-radius:12px;padding:12px"></textarea>
-
-  <h3 style="margin:20px 0 10px">Bağlantılar</h3>
-
-  <!-- ZORUNLU -->
-  <input id="youtube" placeholder="YouTube Linki ">
-  <input id="discord" placeholder="Discord Linki ">
-  <input id="truckersmp" placeholder="TruckersMP Linki ">
-  <input id="kick" placeholder="Kick Linki">
-  <input id="twitch" placeholder="Twitch Linki">
-  <input id="steam" placeholder="Steam Linki">
-  <input id="instagram" placeholder="Instagram Linki">
-  <input id="patreon" placeholder="Patreon Linki">
-  <input id="friend" placeholder="Arkadaş Linki">
-  <input id="apps" placeholder="Uygulama Linkleri">
-
-  <button style="margin-top:25px" onclick="createProfile()">
-    Oluştur
-  </button>
-</div>
-
+      <input id="username" placeholder="username" maxlength="20">
     </div>
 
-    <button>Kendi Kuralink'ini Oluştur!</button>
+    <button onclick="openForm()">Kendi Kuralink'ini Oluştur!</button>
 
-    <div class="footer">
-      © 2026 Kuralink
+    <div id="createForm">
+      <h3>Kuralink'inizde Kullanacağınız İsim</h3>
+      <input placeholder="Görünen isim">
+
+      <h3>Hakkımda (max 1000 karakter)</h3>
+      <textarea maxlength="1000"></textarea>
+
+      <h3>YouTube</h3><input placeholder="https://youtube.com/...">
+      <h3>Discord</h3><input placeholder="https://discord.gg/...">
+      <h3>TruckersMP</h3><input placeholder="https://truckersmp.com/...">
+      <h3>Kick</h3><input>
+      <h3>Twitch</h3><input>
+      <h3>Steam</h3><input>
+      <h3>Instagram</h3><input>
+      <h3>Patreon</h3><input>
+      <h3>Arkadaş Linki</h3><input>
+      <h3>Uygulama Linkleri</h3><input>
+
+      <button style="margin-top:20px">
+        Oluştur
+      </button>
     </div>
+
+    <div class="footer">© 2026 Kuralink</div>
   </div>
+
+  <script>
+    function openForm(){
+      const u = document.getElementById("username").value.trim().toLowerCase();
+      const regex = /^[a-z0-9_]{3,20}$/;
+
+      if(!regex.test(u)){
+        alert("Geçerli bir username gir");
+        return;
+      }
+
+      document.getElementById("createForm").style.display = "block";
+      document.getElementById("createForm").scrollIntoView({behavior:"smooth"});
+    }
+  </script>
 </body>
 </html>
